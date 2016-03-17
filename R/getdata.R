@@ -7,8 +7,17 @@
 #' @keywords GUID
 #' @export
 get_guid <- function(base_url, api_token){
-   r <- GET(paste(base_url, "?auth_key=", api_token, sep=""), accept_json())
-   content_index <- fromJSON(content(r, "text"))
-   return(content_index$guid)
+  if (missing(base_url)) {
+    warning("Please add a valid base URL")
+  }
+  if (missing(api_token)) {
+    warning("Please add a valid api token for the base url you are trying to access")
+  }
+  try({
+    r <- GET(paste(base_url, "?auth_key=", api_token, sep=""), accept_json())
+     content_index <- fromJSON(content(r, "text"))
+     return(content_index$guid)
+  })
 }
+
 
