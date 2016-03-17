@@ -3,18 +3,32 @@
 
 # Access Open Data with the Junar API
 
-The junr package is a wrapper for the Junar API.
+The primary audience for this package is likely to have Spanish as their first language, and so we introduce the package in Spanish below. However, the package itself is written in English (for eventual submission to CRAN) and an introduction in English is available in the [vignette]().
 
-```{r}
-source("apitoken.R")
+## Instalacion
+
+## Use
+
+See the [vignette]()
+
+# Accede Datos Abiertos con el API de Junar
+
+El paquete `junr` envuelve al API de Junar para facilitar el acceso a los datos disponibles desde R. El objetivo es fomentar el uso de los datos disponibles haciendo el acceso mas facil.
+
+Es posible usar el paquete para tener listados de los datos disponibles y despues exportarlos a Excel. Pero, recomendamos usar R para visualizar y analisar los datos. 
+
+## Instalación
+
+
+## Uso 
+Como ejemplo vamos a usar los datos de la casa presidencial costa ricense. Lo primero es ir al sitio correspondiente para encontrar el URL base (`base_url`) y obtener un *token* para el API de Junar.
+
+Por ejemplo:
+
 ```
-The junar API is a common interface used in 
-
-```{r}
 library(junr)
-library(httr)
-library(jsonlite)
-```
+url_base <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
+token_api <- "2ac5dbd5b269c1c4937e77a4bc14169c738be8ab"
 
 ```{r}
 junar_host <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"

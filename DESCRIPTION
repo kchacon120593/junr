@@ -2,25 +2,26 @@ Encoding: UTF-8
 Package: junr
 Type: Package
 Title: R wrapper for the Junar API
-Description: Tools to access data using the Junar API focusing on government 
-    and NGO Open Data implementations 
+Description: Tools to access data using the Junar API focusing on government
+    and NGO Open Data implementations
 Version: 0.1
 Date: 2016-03-16
-Authors@R: c(person("Frans", "van Dunné", , 
-                    "frans.vandunne@gmail.com", 
+Authors@R: c(person("Frans", "van Dunné", ,
+                    "frans.vandunne@gmail.com",
                     c("aut", "cre"))
               )
 BugReports: https://github.com/fvd/junr/issues
 LazyData: TRUE
 Depends:
-    R (>=3.0.0)
+    R (>= 3.0.0)
 imports: 
     httr,
     jsonlite
-Suggests: 
+Suggests:
     knitr,
     rmarkdown,
-    testthat (>=0.8.0)
+    testthat (>= 0.8.0)
 VignetteBuilder: knitr
 License: MIT + file LICENCE
 URL: https://github.com/fvd/junr
+RoxygenNote: 5.0.1

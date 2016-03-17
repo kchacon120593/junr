@@ -4,3 +4,4 @@
 .Ruserdata
 inst/doc
 apitoken.R
+*.swp
