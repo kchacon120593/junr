@@ -1,3 +1,8 @@
+#' @import httr
+#' @import jsonlite
+#'
+NULL
+
 #' Get a list of GUID's
 #'
 #' Get a list of all the available GUID's with datasets or views from the
@@ -65,8 +70,12 @@ guid_titles <- function(base_url, api_token){
 }
 
 #' Get data for a given GUID
-#' 
-#' Get the data for any given GUID
+#'
+#' Get the data for any given GUID and return it as a data frame. Note that we
+#' use the "ajson" json format from the api. The "json" format has a more
+#' difficult structure.
+#'
+#' Note that this removes all metadata from the json response given by the api.
 #'
 #' @param base_url The base url of the Junar service
 #' @param api_token The user's API token for the Junar service
@@ -85,8 +94,12 @@ get_data <- function(base_url, api_token, guid) {
     warning("Please add a valid guid for the dataset you are trying to access")
   }
   try({
-    r <- GET(paste(base_url, guid, "/data.json/","?auth_key=", api_token, sep=""), accept_json())
+    r <- GET(paste(base_url, guid, "/data.ajson/","?auth_key=", api_token, sep=""), accept_json())
     dataset <- fromJSON(content(r, "text"))
-    return(dataset)
+    dataset <- dataset$result
+    df <- as.data.frame(dataset)
+    colnames(df) <- dataset[1,]
+    df <- df [-1,]
+    return(df)
   })
 }

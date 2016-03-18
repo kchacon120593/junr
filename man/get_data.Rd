@@ -14,7 +14,12 @@ get_data(base_url, api_token, guid)
 \item{guid}{The user's API token for the Junar service}
 }
 \description{
-Get the data for any given GUID
+Get the data for any given GUID and return it as a data frame. Note that we
+use the "ajson" json format from the api. The "json" format has a more
+difficult structure.
+}
+\details{
+Note that this removes all metadata from the json response given by the api.
 }
 \keyword{GUID}
 
