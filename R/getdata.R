@@ -75,6 +75,10 @@ guid_titles <- function(base_url, api_token){
 #' use the "ajson" json format from the api. The "json" format has a more
 #' difficult structure.
 #'
+#' We do use the json response to get the fLength value, which indicates the
+#' length of the dataset. This way we can include a fixed way to get arround the
+#' default limit of 1000 rows of the junar api.
+#'
 #' Note that this removes all metadata from the json response given by the api.
 #'
 #' @param base_url The base url of the Junar service
@@ -94,8 +98,12 @@ get_data <- function(base_url, api_token, guid) {
     warning("Please add a valid guid for the dataset you are trying to access")
   }
   try({
-    r <- GET(paste(base_url, guid, "/data.ajson/","?auth_key=", api_token, sep=""), accept_json())
-    dataset <- fromJSON(content(r, "text"))
+    r_json <- GET(paste(base_url, guid, "/data.json/","?auth_key=", api_token, sep=""), accept_json())
+    jsondata <- fromJSON(content(r_json, "text"))
+    data_length <- jsondata$result$fLength
+
+    r_ajson <- GET(paste(base_url, guid, "/data.ajson/","?auth_key=", api_token, "&limit=", data_length, sep=""), accept_json())
+    dataset <- fromJSON(content(r_ajson, "text"))
     dataset <- dataset$result
     df <- as.data.frame(dataset)
     colnames(df) <- dataset[1,]
