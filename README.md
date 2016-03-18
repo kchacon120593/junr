@@ -26,7 +26,7 @@ Para instalar este paquete desde Github es necesario tener el paquete
 `devtools` instalado:
 
     install.packages("devtools")
-    devtools::install_github("fvd/junr")
+    devtools::install_github("FvD/junr")
 
 Por favor tome en cuenta que este paquete esta bajo desarrollo activo. Para
 actualizar la versión instalada es necesario repetir los pasos arriba.
