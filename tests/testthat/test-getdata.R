@@ -1,10 +1,13 @@
 library(junr)
 context("Get data")
 
-base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
-api_token <- "2ac5dbd5b269c1c4937e77a4bc14169c738be8ab"
+# Look for a development connection to the Junar API so that we do not 
+# have to test against an existing implementation
+base_url <- ""
+api_token <- ""
 
 test_that("The data index is read correctly"){
-  expect_that(get_index(base_url, api_token), is.data.frame())
+  # TODO: set up tests that are independent of the API implementation 
+  # expect_that(get_index(base_url, api_token), is.data.frame())
 }
 
