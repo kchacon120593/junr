@@ -13,7 +13,7 @@ made public through the Junar API. Some examples of implementations are: [the Ci
 ### Instalacion
 
     install.packages("devtools")
-    devtools::install_github("fvd/junr")
+    devtools::install_github("FvD/junr")
 
 ## Accede Datos del API de Junar en R
 
