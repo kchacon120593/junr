@@ -82,27 +82,27 @@ guid_titles <- function(base_url, api_token){
 #' Note that this removes all metadata from the json response given by the api.
 #'
 #' @param base_url The base url of the Junar service
-#' @param api_token The user's API token for the Junar service
-#' @param guid The user's API token for the Junar service
+#' @param api_key The user's API key for the Junar service
+#' @param guid The user's API key for the Junar service
 #' @keywords GUID
 #' @export
 
-get_data <- function(base_url, api_token, guid) {
+get_data <- function(base_url, api_key, guid) {
   if (missing(base_url)) {
     warning("Please add a valid base URL")
   }
-  if (missing(api_token)) {
-    warning("Please add a valid api token for the base url you are trying to access")
+  if (missing(api_key)) {
+    warning("Please add a valid api key for the base url you are trying to access")
   }
   if (missing(guid)) {
     warning("Please add a valid guid for the dataset you are trying to access")
   }
   try({
-    r_json <- GET(paste(base_url, guid, "/data.json/","?auth_key=", api_token, sep=""), accept_json())
+    r_json <- GET(paste(base_url, guid, "/data.json/","?auth_key=", api_key, sep=""), accept_json())
     jsondata <- fromJSON(content(r_json, "text"))
     data_length <- jsondata$result$fLength
 
-    r_ajson <- GET(paste(base_url, guid, "/data.ajson/","?auth_key=", api_token, "&limit=", data_length, sep=""), accept_json())
+    r_ajson <- GET(paste(base_url, guid, "/data.ajson/","?auth_key=", api_key, "&limit=", data_length, sep=""), accept_json())
     dataset <- fromJSON(content(r_ajson, "text"))
     dataset <- dataset$result
     df <- as.data.frame(dataset)
