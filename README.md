@@ -43,7 +43,7 @@ Como ejemplo vamos a usar los [datos de la casa presidencial de Costa Rica](http
 Miremos primero cuales datos hay disponibles en este URL:
 
 ``` r
-    get_index(url_base, token_api)
+    get_index(url_base, api_key)
 ```
 
 Este indice es la lista completa con todos los meta-datos incluidos como un `data frame` en R.
@@ -51,13 +51,13 @@ Este indice es la lista completa con todos los meta-datos incluidos como un `dat
 Para tener solo una lista de los GUID la instrucción es:
 
 ``` r
-    list_guid(url_base, token_api)
+    list_guid(url_base, api_key)
 ```
 
 Y solo un listado de los títulos:
 
 ``` r
-    list_titles(url_base, token_api)
+    list_titles(url_base, api_key)
 ```
 
 Estas dos anteriores ayudan para tener una sobrevista rápida de los datos que hay disponibles.
@@ -65,7 +65,7 @@ Estas dos anteriores ayudan para tener una sobrevista rápida de los datos que h
 Obviamente, si conoces el GUID de interés lo puedes usar directamente para obtener los datos. Por ejemplo para los datos de la presidencia Costarricense:
 
     guid_datos <- "COMPR-PUBLI-DEL-MINIS"
-    datos_compras <- get_data(url_base, token_api, guid_datos)
+    datos_compras <- get_data(url_base, api_key, guid_datos)
     View(datos_compras)
 
 Con `View(datos_compras)` podrás comprobar que los datos han sido bajado desde la plataforma Junar y han sido convertidos a una hoja de datos (*EN: data frame*) en R.
@@ -77,7 +77,7 @@ En las plataformas que corren en Junar se encuentran muchos datos que no son mas
 En `junr` lo puedes hacer rápidamente usando la función `get_dimensions` para obtener una tabla con todos los GUID y las dimensiones de los datos:
 
 ``` r
-   get_dimensions(url_base, token_api)
+   get_dimensions(url_base, api_key)
 ```
 
 Plan de desarrollo
