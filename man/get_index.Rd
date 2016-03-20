@@ -4,12 +4,12 @@
 \alias{get_index}
 \title{Get a list of GUID's}
 \usage{
-get_index(base_url, api_token)
+get_index(base_url, api_key)
 }
 \arguments{
 \item{base_url}{The base url of the Junar service}
 
-\item{api_token}{The user's API token for the Junar service}
+\item{api_key}{The user's API key for the Junar service}
 }
 \description{
 Get a list of all the available GUID's with datasets or views from the
