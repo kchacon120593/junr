@@ -88,4 +88,4 @@ Esta es una versión preliminar y aprecio cualquier comentario. Si tienes ideas 
 -   \[X\] Determinar la disponibilidad de datos detrás de un url\_base
 -   \[ \] Convertir datos de divisas a números (en el caso de Costa Rica valores son representados como TEXT y requieren conversión para análisis numérico)
 
-Si gustas me puedes seguirme en Twitter \[@fransvandunne\](<https://www.twitter.com/fransvandunne>), donde anuncio cualquier cambio en el paquete.
+Si gustas me puedes seguirme en Twitter [@fransvandunne](<https://www.twitter.com/fransvandunne>), donde anuncio cualquier cambio en el paquete.
