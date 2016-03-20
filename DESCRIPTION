@@ -1,9 +1,9 @@
 Encoding: UTF-8
 Package: junr
 Type: Package
-Title: R wrapper for the Junar API
-Description: Tools to access data using the Junar API 
-Version: 0.1
+Title: Read data from the Junar API
+Description: Tools to access data using the Junar API
+Version: 0.1.0.9003
 Date: 2016-03-16
 Authors@R: c(person("Frans", "van Dunné", ,
                     "frans@ixpantia.com",
@@ -13,7 +13,7 @@ BugReports: https://github.com/fvd/junr/issues
 LazyData: TRUE
 Depends:
     R (>= 3.0.0)
-imports: 
+imports:
     httr,
     jsonlite,
     dplyr
