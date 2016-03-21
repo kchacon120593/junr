@@ -124,7 +124,7 @@ o si encuentras bichos raros (*EN: bugs*) abre un incidente aquí en Github.
 En mi lista de que-haceres esta por lo menos lo siguiente:
 
 - [X] Determinar la disponibilidad de datos detrás de un url_base
-- [ ] Convertir datos de divisas a números (en el caso de Costa Rica valores son
+- [X] Convertir datos de divisas a números (en el caso de Costa Rica valores son
   representados como TEXT y requieren conversión para análisis numérico) 
 
 Si gustas me puedes seguirme en Twitter
