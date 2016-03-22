@@ -15,7 +15,8 @@ currency symbol (include any spaces)}
 \description{
 The currency symbol is not always obvious, depending on the currency you are
 working with. The symbol for Costa Rican Colon, for instance may not dispaly
-correctly or the same. It may appear as "¢" or as "₡" in the same R session.
+correctly or the same. It may have different appearances in the same R
+session, and cannot be included here because they lead to built errors.
 }
 \details{
 To have a check in place you can request the first character of the currency

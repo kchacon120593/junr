@@ -2,12 +2,13 @@
 #'
 #' Often Junar data involving currency data is not clean because for some reason
 #' content and presentation of currency values is not separated). To clean up
-#' this data quickly the following helper function accepts the character value
-#' for the currency and the thousands and decimal delimiters.
+#' this data quickly the following helper function accepts the position of the
+#' character value for the currency and the thousands and decimal delimiters.
 #'
-#' It defaults to Costa Rican Colon for no other reason than that this is
-#' written in Costa Rica, and the Colon has symbol that is uncommon and leads to
-#' errors easily in R.
+#' The currency character position defaults to the first character from the
+#' left. And it refers directly to the symbol as present in the data frame column, because some characters
+#' (such as the  symbol for the Costa Rican Colon) give are uncommon and lead to
+#' multiple encoding and font errors.
 #'
 #' @param currency_column The column in the data frame that contains the currency values.
 #' @param currency_symbol_pos The position from the left of the currency symbol
@@ -32,7 +33,8 @@ clean_currency <- function(currency_column, currency_symbol_pos=1, thousand_sepa
 #'
 #' The currency symbol is not always obvious, depending on the currency you are
 #' working with. The symbol for Costa Rican Colon, for instance may not dispaly
-#' correctly or the same. It may appear as "¢" or as "₡" in the same R session.
+#' correctly or the same. It may have different appearances in the same R
+#' session, and cannot be included here because they lead to built errors.
 #'
 #' To have a check in place you can request the first character of the currency
 #' strings with this function, and use it either to assign the currency value,

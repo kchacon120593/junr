@@ -20,13 +20,14 @@ used. If any spaces are included, please include them here as well.}
 \description{
 Often Junar data involving currency data is not clean because for some reason
 content and presentation of currency values is not separated). To clean up
-this data quickly the following helper function accepts the character value
-for the currency and the thousands and decimal delimiters.
+this data quickly the following helper function accepts the position of the
+character value for the currency and the thousands and decimal delimiters.
 }
 \details{
-It defaults to Costa Rican Colon for no other reason than that this is
-written in Costa Rica, and the Colon has symbol that is uncommon and leads to
-errors easily in R.
+The currency character position defaults to the first character from the
+left. And it refers directly to the symbol as present in the data frame column, because some characters
+(such as the  symbol for the Costa Rican Colon) give are uncommon and lead to
+multiple encoding and font errors.
 }
 \keyword{Cleaning,}
 \keyword{Currency,}
