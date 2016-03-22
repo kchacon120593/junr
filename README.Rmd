@@ -101,8 +101,9 @@ obtener los datos. Por ejemplo para los datos de la presidencia Costarricense:
     datos_compras <- get_data(url_base, api_key, guid_datos)
     View(datos_compras)
 
-Con `View(datos_compras)` podrás comprobar que los datos han sido bajado desde
-la plataforma Junar y han sido convertidos a una hoja de datos (*EN: data frame*) en R.
+Con `View(datos_compras)` podrás comprobar que los datos han sido bajado desde 
+la plataforma Junar y han sido convertidos a una hoja de datos (*EN: data
+frame*) en R.
 
 ### Determinar la cantidad de datos disponibles
 En las plataformas que corren en Junar se encuentran muchos datos que no son
@@ -116,7 +117,23 @@ obtener una tabla con todos los GUID y las dimensiones de los datos:
    get_dimensions(url_base, api_key)
 ``` 
 
-## Plan de desarrollo
+# Limpiar valores de divisas
+
+Por lo menos en los datos ejemplo arriba, pero posiblemente en mas
+implementaciones de Junar, hay que limpiar todos los datos que corresponden a
+divisas. En nuestro caso hay que buscar todos los simbolos de la divisa (Colon
+Costarricense), y todas las commas ya que estas hacen que para R son valores de
+Texto y no numeros.
+
+Hay un para de utilidades para hacerlo `clean_currency` y `get_currency_symbol`.
+Por ejemplo:
+
+```R
+   datos_con_divisas <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
+   datos_con_divisas$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
+```
+   
+## Actualizaciones
 
 Esta es una versión preliminar y aprecio cualquier comentario. Si tienes ideas
 sobre funcionalidad que puede ser útil incluir en este paquete 
@@ -128,5 +145,5 @@ En mi lista de que-haceres esta por lo menos lo siguiente:
   representados como TEXT y requieren conversión para análisis numérico) 
 
 Si gustas me puedes seguirme en Twitter
-[@fransvandunne](https://www.twitter.com/fransvandunne), donde anuncio
+[\@fransvandunne](https://www.twitter.com/fransvandunne), donde anuncio
 cualquier cambio en el paquete.

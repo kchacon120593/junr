@@ -80,12 +80,21 @@ En `junr` lo puedes hacer rápidamente usando la función `get_dimensions` para 
    get_dimensions(url_base, api_key)
 ```
 
-Plan de desarrollo
-------------------
+Limpiar valores de divisas
+==========================
 
-Esta es una versión preliminar y aprecio cualquier comentario. Si tienes ideas sobre funcionalidad que puede ser útil incluir en este paquete o si encuentras bichos raros (*EN: bugs*) abre un incidente aquí en Github. En mi lista de que-haceres esta por lo menos lo siguiente:
+Por lo menos en los datos ejemplo arriba, pero posiblemente en mas implementaciones de Junar, hay que limpiar todos los datos que corresponden a divisas. En nuestro caso hay que buscar todos los simbolos de la divisa (Colon Costarricense), y todas las commas ya que estas hacen que para R son valores de Texto y no numeros.
 
--   \[X\] Determinar la disponibilidad de datos detrás de un url\_base
--   \[X\] Convertir datos de divisas a números (en el caso de Costa Rica valores son representados como TEXT y requieren conversión para análisis numérico)
+Hay un para de utilidades para hacerlo `clean_currency` y `get_currency_symbol`. Por ejemplo:
 
-Si gustas me puedes seguirme en Twitter [@fransvandunne](<https://www.twitter.com/fransvandunne>), donde anuncio cualquier cambio en el paquete.
+``` r
+   datos_con_divisas <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
+   datos_con_divisas$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
+```
+
+Actualizaciones
+---------------
+
+Esta es una versión preliminar y aprecio cualquier comentario. Si tienes ideas sobre funcionalidad que puede ser útil incluir en este paquete o si encuentras bichos raros (*EN: bugs*) abre un incidente aquí en Github.
+
+Si gustas me puedes seguirme en Twitter [@fransvandunne](https://www.twitter.com/fransvandunne), donde anuncio cualquier cambio en el paquete.
