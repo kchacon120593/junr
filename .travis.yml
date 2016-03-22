@@ -3,6 +3,7 @@ language: r
 
 sudo: false
 warnings_are_errors: false
+cache: packages
 
 # codecov test coverage
 r_github_packages:
