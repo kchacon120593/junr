@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Access Open Data with the Junar API"
+author: "Frans van Dunné"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -9,50 +9,107 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+## Introduction
+The Junar API is the basis for a number of Open Data initiatives in Latin
+America and the USA. The `junr` package is a wrapper to make it easier to
+access data made public through the Junar API. Some examples of implementations
+are: [the City of Pasadena](http://data.cityofpasadena.net/home/), and [the
+City of San Jose](http://data.sanjoseca.gov/home/). Others are listed on the
+[Junar website](http://junar.com/?lang=en).
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+## Usage
+As an example we will use the data from the [Costa Rican President's
+Office](http://datosabiertos.presidencia.go.cr/home).The first step is to
+access the website offering the open data to identify the base URL and to
+obtain an API Key to get access to the Junar API that hosts the data. You will
+find both on the [developers page of the Open Data Costa Rica
+site](http://datosabiertos.presidencia.go.cr/developers/). 
 
-## Vignette Info
+Below we use a test API Key so that all the examples will run. You may want to
+get your own API Key to run the examples below. 
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r}
+library(junr)
+url_base <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
+api_key <- "El API Key que obtuviste de la pagina"
+api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff" 
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+Now that we have the basic information for a connection we can quickly check
+what data is available behind this URL.
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```{r}
+get_index(url_base, api_key)
 ```
 
-Also a quote using `>`:
+The `get_index`function returns the complete list of available data with all
+meta-data included as a data frame. 
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+To get only a list of the global unique identifiers (GUID) of the data sets,
+you can use `list_guid`. 
+
+
+```{r}
+list_guid(url_base, api_key)
+```
+
+This has the benefit that a reference can be made to the GUID based on position
+number. For example:
+
+```{r}
+pres_list <-list_guid(url_base, api_key)
+pres_lit[3]
+```
+
+And the same numbers can be used based on the full title with `list_titles`. 
+
+```{r}
+list_titles(url_base, api_key)
+```
+
+Both `list_guid` and `list_titles` where set up for convenience only because
+the results tend to fit in the console window making it easier to read.
+
+Obviously, if you have the GUID of the data that interest you, you can use this
+directly to make a call to read all the data. For example, to view all public
+purchasing of the presidential office in Costa Rica:
+
+```{r}
+data_guid <- "COMPR-PUBLI-DEL-MINIS"
+purchasing_data <- get_data(url_base, api_key, guid_datos)
+```
+
+With `View(purchasing_data)` you can check whether the data have been
+downloaded correctly, and have a quick visual check on the mode of the data
+(see below to convert currency data from text to numeric).
+
+## Determine data dimensions
+On data platforms that run Junar, many data sets are just tables of data that
+has already been analysed and summarized. It is not immediately obvious which
+sets contain many data points, and which sets contain only a few rows.
+
+The function `get_dimensions` will download all data sets offered through the
+base URL and determine how many rows and columns are available in each one. It
+is useful to make a quick assessment of the data available. However, please
+note that it may take a while before the function finishes, especially if there
+are many GUID's.
+
+
+```{r}
+get_dimensions(url_base, api_key)
+```
+
+## Clean up currency data
+In the example data above, and possibly in more Junar implementations, we need
+to clean up any data related to currency values. In our case we need to found
+all currency symbols (Costa Rica Colon) and all the comma's separating
+thousands. As they stand these values are text strings, and cannot be converted
+directly to numeric without removing the symbols and commas.
+
+There are two utilities to help cleaning the currency data: `clean_currency` y
+`get_currency_symbol`.  For example:
+
+```R
+   currency_data <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
+   currency_data$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
+```
