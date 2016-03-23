@@ -6,7 +6,6 @@ base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
 api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff"
 
 currency_data <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
-test_r <- get_data(base_url, api_key, "LICsdsdglkjIT-ADJUD-POR-LOS-MINIS")
 
 test_that("The test endpoint is still valid", {
  expect_true(nrow(currency_data)>0)
