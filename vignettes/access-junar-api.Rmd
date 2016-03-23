@@ -58,7 +58,7 @@ number. For example:
 
 ```{r}
 pres_list <-list_guid(url_base, api_key)
-pres_lit[3]
+pres_list[3]
 ```
 
 And the same numbers can be used based on the full title with `list_titles`. 
