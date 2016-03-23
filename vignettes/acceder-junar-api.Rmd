@@ -82,3 +82,18 @@ obtener una tabla con todos los GUID y las dimensiones de los datos:
 get_dimensions(url_base, api_key)
 ```
 
+# Limpiar valores de divisas
+
+Por lo menos en los datos ejemplo arriba, pero posiblemente en mas
+implementaciones de Junar, hay que limpiar todos los datos que corresponden a
+divisas. En nuestro caso hay que buscar todos los simbolos de la divisa (Colon
+Costarricense), y todas las commas ya que estas hacen que para R son valores de
+Texto y no numeros.
+
+Hay un para de utilidades para hacerlo `clean_currency` y `get_currency_symbol`.
+Por ejemplo:
+
+```R
+   datos_con_divisas <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
+   datos_con_divisas$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
+```
