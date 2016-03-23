@@ -12,7 +12,7 @@ vignette: >
 ## Introducción
 
 El API de Junar es la base para varias iniciativas de Datos Abiertos en Latino
-América y los EEUU.  El paquete `junr` facilita el acceso a estos datos des R.
+América y los EEUU.  El paquete `junr` facilita el acceso a estos datos desde R.
 El objetivo es fomentar el uso de los datos disponibles haciendo el acceso lo
 mas fácil. Algunos ejemplos de implementaciones son: [el Portal de Datos
 Abiertos del Gobierno de Costa
@@ -42,7 +42,7 @@ get_index(url_base, api_key)
 ```
 
 Este indice es la lista completa con todos los meta-datos incluidos como una
-hoja de datos (*EN: data frame*) en R. 
+hoja de datos (*data frame*) en R. 
 
 Para tener solo una lista de los GUID la instrucción es:
 
@@ -68,7 +68,7 @@ datos_compras <- get_data(url_base, api_key, guid_datos)
 ```
 
 Con `View(datos_compras)` podrás comprobar que los datos han sido bajado desde
-la plataforma Junar y han sido convertidos a una hoja de datos (*EN: data frame*) en R.
+la plataforma Junar y han sido convertidos a una hoja de datos (*data frame*) en R.
 
 ### Determinar la cantidad de datos disponibles
 En las plataformas que corren en Junar se encuentran muchos datos que no son

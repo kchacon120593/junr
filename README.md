@@ -46,7 +46,7 @@ Miremos primero cuales datos hay disponibles en este URL:
     get_index(url_base, api_key)
 ```
 
-Este indice es la lista completa con todos los meta-datos incluidos como un `data frame` en R.
+Este indice es la lista completa con todos los meta-datos incluidos como una hoja de datos (*data frame*) en R.
 
 Para tener solo una lista de los GUID la instrucción es:
 
@@ -64,11 +64,12 @@ Estas dos anteriores ayudan para tener una sobrevista rápida de los datos que h
 
 Obviamente, si conoces el GUID de interés lo puedes usar directamente para obtener los datos. Por ejemplo para los datos de la presidencia Costarricense:
 
+``` r
     guid_datos <- "COMPR-PUBLI-DEL-MINIS"
     datos_compras <- get_data(url_base, api_key, guid_datos)
-    View(datos_compras)
+```
 
-Con `View(datos_compras)` podrás comprobar que los datos han sido bajado desde la plataforma Junar y han sido convertidos a una hoja de datos (*EN: data frame*) en R.
+Con `View(datos_compras)` podrás comprobar que los datos han sido bajado desde y han sido convertidos a una hoja de datos (*data frame*) en R.
 
 ### Determinar la cantidad de datos disponibles
 
@@ -95,6 +96,6 @@ Hay un para de utilidades para hacerlo `clean_currency` y `get_currency_symbol`.
 Actualizaciones
 ---------------
 
-Esta es una versión preliminar y aprecio cualquier comentario. Si tienes ideas sobre funcionalidad que puede ser útil incluir en este paquete o si encuentras bichos raros (*EN: bugs*) abre un incidente aquí en Github.
+Esta es una versión preliminar y aprecio cualquier comentario. Si tienes ideas sobre funcionalidad que puede ser útil incluir en este paquete o si encuentras errores (*bugs*) abre un incidente aquí en Github.
 
 Si gustas me puedes seguirme en Twitter [@fransvandunne](https://www.twitter.com/fransvandunne), donde anuncio cualquier cambio en el paquete.
