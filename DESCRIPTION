@@ -4,7 +4,7 @@ Type: Package
 Title: Access Open Data Through the Junar API
 Description:
     The Junar API is a commercial platform to organize and publish data
-    (http://junar.com). It has been used in a number of national and local
+    <http://junar.com>. It has been used in a number of national and local
     government Open Data initiatives in Latin America and the USA. This package
     is a wrapper to make it easier to access data made public through the Junar
     API.
