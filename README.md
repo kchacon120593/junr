@@ -2,12 +2,12 @@
 junr
 ====
 
-[![Travis-CI Build Status](https://travis-ci.org/FvD/junr.svg?branch=master)](https://travis-ci.org/FvD/junr) [![Coverage Status](https://img.shields.io/codecov/c/github/FvD/junr/master.svg)](https://codecov.io/github/FvD/junr?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/junr)](http://cran.r-project.org/package=junr)
+[![Travis-CI Build Status](https://travis-ci.org/FvD/junr.svg?branch=master)](https://travis-ci.org/FvD/junr) [![Coverage Status](https://img.shields.io/codecov/c/github/FvD/junr/master.svg)](https://codecov.io/github/FvD/junr?branch=master) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/junr)](http://cran.r-project.org/package=junr)
 
 Access Open Data in R through the Junar API
 -------------------------------------------
 
-The Junar API is the basis for a number of Open Data initiatives in Latin America and the USA. The `junr` package is a wrapper to make it easier to access data made public through the Junar API. Some examples of implementations are: [the City of Pasadena](http://data.cityofpasadena.net/home/), and [the City of San Jose](http://data.sanjoseca.gov/home/). Others are listed on the [Junar website](http://junar.com/?lang=en).
+The Junar API is the basis for a number of Open Data initiatives in Latin America and the USA. The `junr` package is a wrapper to make it easier to access data made public through the Junar API. Some examples of implementations are: [the City of Pasadena](http://data.cityofpasadena.net/home/), and [the City of San Jose](http://data.sanjoseca.gov/home/). Others are listed on the [Junar website](http://junar.com/).
 
 ### Installation
 
@@ -25,7 +25,7 @@ For a full example, please consult the [package vignette](http://rpubs.com/FvD/a
 ``` r
 library(junr)
 base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
-api_key <- "the-api-key-from-the-corresponding-url" 
+api_key <- "the-API-Key-from-the-corresponding-url" 
 ```
 
 With this connection information the `junr` package helps you to do the following:
@@ -61,7 +61,7 @@ currency_data$`Monto Adjudicado` <- clean_currency(currency_data$`Monto Adjudica
 Accede Datos a través del API de Junar en R
 -------------------------------------------
 
-El API de Junar es la base para varias iniciativas de Datos Abiertos en Latino América y los EEUU. El paquete `junr` facilita el acceso a estos datos des R. El objetivo es fomentar el uso de los datos disponibles haciendo el acceso lo mas fácil. Algunos ejemplos de implementaciones son: [el Portal de Datos Abiertos del Gobierno de Costa Rica](http://datosabiertos.presidencia.go.cr/home), [Chile Transparente](http://infodatos.opendata.junar.com/home/?lang=es) y la [Ciudad de Córdoba (Argentina)](http://cdcordoba.opendata.junar.com/home/?lang=en) entre otros.
+El API de Junar es la base para varias iniciativas de Datos Abiertos en Latino América y los EEUU. El paquete `junr` facilita el acceso a estos datos des R. El objetivo es fomentar el uso de los datos disponibles haciendo el acceso lo mas fácil. Algunos ejemplos de implementaciones son: [el Portal de Datos Abiertos del Gobierno de Costa Rica](http://datosabiertos.presidencia.go.cr/home) y la [Ciudad de Córdoba (Argentina)](http://cdcordoba.opendata.junar.com/home/?lang=en) entre otros. Otros se pueden encontrar en el [sitio web de Junar](http://junar.com/).
 
 ### Instalación
 

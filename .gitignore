@@ -5,3 +5,6 @@
 inst/doc
 apitoken.R
 *.swp
+
+vignettes/*.R
+vignettes/*.html

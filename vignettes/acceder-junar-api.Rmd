@@ -19,7 +19,7 @@ Abiertos del Gobierno de Costa
 Rica](http://datosabiertos.presidencia.go.cr/home), [Chile
 Transparente](http://infodatos.opendata.junar.com/home/?lang=es) y la [Ciudad
 de Córdoba (Argentina)](http://cdcordoba.opendata.junar.com/home/?lang=en)
-entre otros.
+entre otros. Otros se pueden encontrar en el [sitio web de Junar](http://junar.com/).
 
 ### Ejemplos de uso
 Como ejemplo vamos a usar los [datos de la casa presidencial de Costa
@@ -31,7 +31,6 @@ Rica](http://datosabiertos.presidencia.go.cr/developers/).
 ```{r}
 library(junr)
 url_base <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
-api_key <- "El API Key que obtuviste de la pagina"
 api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff" 
 ```
 
@@ -84,7 +83,6 @@ get_dimensions(url_base, api_key)
 ```
 
 ### Limpiar valores de divisas
-
 Por lo menos en los datos ejemplo arriba, pero posiblemente en mas
 implementaciones de Junar, hay que limpiar todos los datos que corresponden a
 divisas. En nuestro caso hay que buscar todos los símbolos de la divisa (Colon
