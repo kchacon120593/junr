@@ -26,20 +26,20 @@ find both on the [developers page of the Open Data Costa Rica
 site](http://datosabiertos.presidencia.go.cr/developers/). 
 
 Below we use a test API Key so that all the examples will run. You may want to
-get your own API Key to run the examples below. 
+get your own API Key instead to run the examples below. Note that with Junar
+each URL has its own API key.
 
 ```{r}
 library(junr)
-url_base <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
-api_key <- "El API Key que obtuviste de la pagina"
+base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
 api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff" 
 ```
 
 Now that we have the basic information for a connection we can quickly check
 what data is available behind this URL.
 
-```{r}
-get_index(url_base, api_key)
+```{r, eval=FALSE}
+get_index(base_url, api_key)
 ```
 
 The `get_index`function returns the complete list of available data with all
@@ -50,21 +50,21 @@ you can use `list_guid`.
 
 
 ```{r}
-list_guid(url_base, api_key)
+list_guid(base_url, api_key)
 ```
 
 This has the benefit that a reference can be made to the GUID based on position
 number. For example:
 
 ```{r}
-pres_list <-list_guid(url_base, api_key)
+pres_list <-list_guid(base_url, api_key)
 pres_list[3]
 ```
 
 And the same numbers can be used based on the full title with `list_titles`. 
 
 ```{r}
-list_titles(url_base, api_key)
+list_titles(base_url, api_key)
 ```
 
 Both `list_guid` and `list_titles` where set up for convenience only because
@@ -76,16 +76,16 @@ purchasing of the presidential office in Costa Rica:
 
 ```{r}
 data_guid <- "COMPR-PUBLI-DEL-MINIS"
-purchasing_data <- get_data(url_base, api_key, guid_datos)
+purchasing_data <- get_data(base_url, api_key, data_guid)
 ```
 
 With `View(purchasing_data)` you can check whether the data have been
 downloaded correctly, and have a quick visual check on the mode of the data
 (see below to convert currency data from text to numeric).
 
-## Determine data dimensions
+### Determine data dimensions
 On data platforms that run Junar, many data sets are just tables of data that
-has already been analysed and summarized. It is not immediately obvious which
+has already been analyzed and summarized. It is not immediately obvious which
 sets contain many data points, and which sets contain only a few rows.
 
 The function `get_dimensions` will download all data sets offered through the
@@ -96,20 +96,20 @@ are many GUID's.
 
 
 ```{r}
-get_dimensions(url_base, api_key)
+get_dimensions(base_url, api_key)
 ```
 
-## Clean up currency data
+### Clean up currency data
 In the example data above, and possibly in more Junar implementations, we need
 to clean up any data related to currency values. In our case we need to found
 all currency symbols (Costa Rica Colon) and all the comma's separating
 thousands. As they stand these values are text strings, and cannot be converted
 directly to numeric without removing the symbols and commas.
 
-There are two utilities to help cleaning the currency data: `clean_currency` y
-`get_currency_symbol`.  For example:
+There are two utilities to help cleaning the currency data: `clean_currency`
+and `get_currency_symbol`.  For example:
 
-```R
-   currency_data <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
-   currency_data$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
+```{r}
+currency_data <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
+currency_data$`Monto Adjudicado` <- clean_currency(currency_data$`Monto Adjudicado`)  
 ```
