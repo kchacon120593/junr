@@ -7,23 +7,23 @@
 get_data(base_url, api_key, guid)
 }
 \arguments{
-\item{base_url}{The base url of the Junar service}
+\item{base_url}{The base URL of the Junar service}
 
 \item{api_key}{The user's API key for the Junar service}
 
-\item{guid}{The user's API key for the Junar service}
+\item{guid}{The GUID of the data set of interest}
 }
 \description{
 Get the data for any given GUID and return it as a data frame. Note that we
-use the "ajson" json format from the api. The "json" format has a more
-difficult structure.
+use the "ajson" json format from the API. The "json" format has a more
+complex structure.
 }
 \details{
-We do use the json response to get the fLength value, which indicates the
-length of the dataset. This way we can include a fixed way to get arround the
-default limit of 1000 rows of the junar api.
+We do use the json response to get the \code{fLength} value, which indicates the
+length of the dataset. This way we can include a fixed way to get around the
+default limit of 1000 rows of the Junar API.
 
-Note that this removes all metadata from the json response given by the api.
+Note that this removes all meta-data from the json response given by the API.
 }
 \keyword{GUID}
 

@@ -6,15 +6,18 @@
 #' character value for the currency and the thousands and decimal delimiters.
 #'
 #' The currency character position defaults to the first character from the
-#' left. And it refers directly to the symbol as present in the data frame column, because some characters
-#' (such as the  symbol for the Costa Rican Colon) give are uncommon and lead to
-#' multiple encoding and font errors.
+#' left. And it refers directly to the symbol as present in the data frame
+#' column, because some characters (such as the  symbol for the Costa Rican
+#' Colon) give are uncommon and lead to multiple encoding and font errors.
 #'
-#' @param currency_column The column in the data frame that contains the currency values.
+#' @param currency_column The column in the data frame that contains the
+#'    currency values.
 #' @param currency_symbol_pos The position from the left of the currency symbol
-#'   used. If any spaces are included, please include them here as well.
-#' @param thousand_separator The character value that separates thousands (defaults to ",")
-#' @param decimal_separator The character value that separates decimals (defaults to ".")
+#'    used. If any spaces are included, please include them here as well.
+#' @param thousand_separator The character value that separates thousands
+#'    (defaults to ",")
+#' @param decimal_separator The character value that separates decimals
+#'    (defaults to ".")
 #' @keywords Currency, Data Cleaning, Scrubbing
 #' @export
 clean_currency <- function(currency_column, currency_symbol_pos=1, thousand_separator=",", decimal_separator=".") {
@@ -32,7 +35,7 @@ clean_currency <- function(currency_column, currency_symbol_pos=1, thousand_sepa
 #' Get the currency symbol
 #'
 #' The currency symbol is not always obvious, depending on the currency you are
-#' working with. The symbol for Costa Rican Colon, for instance may not dispaly
+#' working with. The symbol for Costa Rican Colon, for instance may not display
 #' correctly or the same. It may have different appearances in the same R
 #' session, and cannot be included here because they lead to built errors.
 #'

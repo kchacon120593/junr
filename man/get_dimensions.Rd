@@ -2,18 +2,20 @@
 % Please edit documentation in R/inspectdata.R
 \name{get_dimensions}
 \alias{get_dimensions}
-\title{Get dimensions of al GUID's}
+\title{Get dimensions of all data sets}
 \usage{
 get_dimensions(base_url, api_key)
 }
 \arguments{
-\item{base_url}{The base url of the Junar service}
+\item{base_url}{The base URL of the Junar service}
 
 \item{api_key}{The user's API key for the Junar service}
 }
 \description{
 Get the size of the data sets behind each of the GUID's offered by the base
-URL.
+URL. This function will iterate through all the GUID's available and present
+the results as a data frame with the GUID, the number of rows, number of
+columns and dimension (as total number of cells) for each data set.
 }
 \keyword{GUID}
 

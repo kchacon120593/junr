@@ -8,14 +8,17 @@ clean_currency(currency_column, currency_symbol_pos = 1,
   thousand_separator = ",", decimal_separator = ".")
 }
 \arguments{
-\item{currency_column}{The column in the data frame that contains the currency values.}
+\item{currency_column}{The column in the data frame that contains the
+currency values.}
 
 \item{currency_symbol_pos}{The position from the left of the currency symbol
 used. If any spaces are included, please include them here as well.}
 
-\item{thousand_separator}{The character value that separates thousands (defaults to ",")}
+\item{thousand_separator}{The character value that separates thousands
+(defaults to ",")}
 
-\item{decimal_separator}{The character value that separates decimals (defaults to ".")}
+\item{decimal_separator}{The character value that separates decimals
+(defaults to ".")}
 }
 \description{
 Often Junar data involving currency data is not clean because for some reason
@@ -25,9 +28,9 @@ character value for the currency and the thousands and decimal delimiters.
 }
 \details{
 The currency character position defaults to the first character from the
-left. And it refers directly to the symbol as present in the data frame column, because some characters
-(such as the  symbol for the Costa Rican Colon) give are uncommon and lead to
-multiple encoding and font errors.
+left. And it refers directly to the symbol as present in the data frame
+column, because some characters (such as the  symbol for the Costa Rican
+Colon) give are uncommon and lead to multiple encoding and font errors.
 }
 \keyword{Cleaning,}
 \keyword{Currency,}

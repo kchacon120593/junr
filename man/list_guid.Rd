@@ -7,13 +7,13 @@
 list_guid(base_url, api_key)
 }
 \arguments{
-\item{base_url}{The base url of the Junar service}
+\item{base_url}{The base URL of the Junar service}
 
 \item{api_key}{The user's API key for the Junar service}
 }
 \description{
-Show a simple list of all available GUID. This is not adding the titles to
-the list because it generaly will not fit in the console window.
+Show a list of all available GUID's identifying the available data sets. It
+only shows GUID's so that the list will fit in the console window.
 }
 \keyword{GUID}
 

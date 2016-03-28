@@ -7,7 +7,7 @@
 get_index(base_url, api_key)
 }
 \arguments{
-\item{base_url}{The base url of the Junar service}
+\item{base_url}{The base URL of the Junar service}
 
 \item{api_key}{The user's API key for the Junar service}
 }

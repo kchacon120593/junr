@@ -1,9 +1,11 @@
-#' Get dimensions of al GUID's
+#' Get dimensions of all data sets
 #'
 #' Get the size of the data sets behind each of the GUID's offered by the base
-#' URL.
+#' URL. This function will iterate through all the GUID's available and present
+#' the results as a data frame with the GUID, the number of rows, number of
+#' columns and dimension (as total number of cells) for each data set.
 #'
-#' @param base_url The base url of the Junar service
+#' @param base_url The base URL of the Junar service
 #' @param api_key The user's API key for the Junar service
 #' @keywords GUID
 #' @export
@@ -13,7 +15,7 @@ get_dimensions <- function(base_url, api_key) {
     warning("Please add a valid base URL")
   }
   if (missing(api_key)) {
-    warning("Please add a valid api key for the base url you are trying to access")
+    warning("Please add a valid API key for the base URL you are trying to access")
   }
   try({
     guid_list <- list_guid(base_url, api_key)

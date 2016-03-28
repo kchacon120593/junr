@@ -14,7 +14,7 @@ currency symbol (include any spaces)}
 }
 \description{
 The currency symbol is not always obvious, depending on the currency you are
-working with. The symbol for Costa Rican Colon, for instance may not dispaly
+working with. The symbol for Costa Rican Colon, for instance may not display
 correctly or the same. It may have different appearances in the same R
 session, and cannot be included here because they lead to built errors.
 }
