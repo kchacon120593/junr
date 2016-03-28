@@ -2,7 +2,7 @@
 junr
 ====
 
-[![Travis-CI Build Status](https://travis-ci.org/FvD/junr.svg?branch=master)](https://travis-ci.org/FvD/junr) [![Coverage Status](https://img.shields.io/codecov/c/github/FvD/junr/master.svg)](https://codecov.io/github/FvD/junr?branch=master) [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/junr)](http://cran.r-project.org/package=junr)
+[![Travis-CI Build Status](https://travis-ci.org/FvD/junr.svg?branch=master)](https://travis-ci.org/FvD/junr) [![Coverage Status](https://img.shields.io/codecov/c/github/FvD/junr/master.svg)](https://codecov.io/github/FvD/junr?branch=master) [![CRAN Status Badge](https://www.r-pkg.org/badges/version/junr)](http://cran.r-project.org/web/packages/junr)
 
 Access Open Data in R through the Junar API
 -------------------------------------------
