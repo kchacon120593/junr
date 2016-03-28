@@ -1,10 +1,10 @@
 ---
-title: "Acceder Datos Abiertos del API de Junar"
+title: "Acceder Datos Abiertos a Través del API de Junar"
 author: "Frans van Dunné"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Acceder Datos Abiertos del API de Junar}
+  %\VignetteIndexEntry{Acceder Datos Abiertos a Través del API de Junar}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -93,4 +93,5 @@ Por ejemplo:
 
 ```{r}
 datos_con_divisas <- get_data(url_base, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
+datos_con_divisas$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
 ```

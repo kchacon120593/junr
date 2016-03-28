@@ -1,10 +1,10 @@
 ---
-title: "Access Open Data with the Junar API"
+title: "Access Open Data Through the Junar API"
 author: "Frans van Dunné"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Access Open Data with the Junar API}
+  %\VignetteIndexEntry{Access Open Data Through the Junar API}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
