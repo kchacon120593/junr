@@ -1,10 +1,14 @@
 Encoding: UTF-8
 Package: junr
 Type: Package
-Title: Read data from the Junar API
-Description: Tools to access data using the Junar API
-Version: 0.1.0.9008
-Date: 2016-03-16
+Title: Access Open Data through the Junar API
+Description:
+    The Junar API is a commercial platform to organize and publish data. It has
+    been used in a number of national and local government Open Data
+    initiatives in Latin America and the USA. This package is a wrapper to make
+    it easier to access data made public through the Junar API.
+Version: 0.1.0
+Date: 2016-03-28
 Authors@R: c(person("Frans", "van Dunné", ,
                     "frans@ixpantia.com",
                     c("aut", "cre"))
@@ -15,8 +19,7 @@ Depends:
     R (>= 3.0.0)
 Imports:
     httr,
-    jsonlite,
-    dplyr
+    jsonlite
 Suggests:
     knitr,
     rmarkdown,
