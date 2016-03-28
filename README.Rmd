@@ -42,7 +42,7 @@ vignette](http://rpubs.com/FvD/access-junar-api).
 
 ```{r}
 library(junr)
-url_base <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
+base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
 api_key <- "the-api-key-from-the-corresponding-url" 
 ```
 With this connection information the `junr` package helps you to do the following:
@@ -50,29 +50,29 @@ With this connection information the `junr` package helps you to do the followin
 **Get the index of data behind the base URL**
 
 ```{r, eval=FALSE}
-get_index(url_base, api_key)
+get_index(base_url, api_key)
 ```
 
-You can also just get a list of GUID's `list_guid(url_base, api_key)` or a list
-of data set titles `list_titles(url_base, api_key)`.
+You can also just get a list of GUID's `list_guid(base_url, api_key)` or a list
+of data set titles `list_titles(base_url, api_key)`.
 
 **Get a particular data set**
 
 ```{r, eval=FALSE}
 data_guid <- "COMPR-PUBLI-DEL-MINIS"
-purchasing_data <- get_data(url_base, api_key, guid_datos)
+purchasing_data <- get_data(base_url, api_key, data_guid)
 ```
 **Determine data dimensions**
 
 ```{r, eval=FALSE}
-get_dimensions(url_base, api_key)
+get_dimensions(base_url, api_key)
 ```
 
 **Clean up currency data**
 
 ```{r, eval=FALSE}
 currency_data <- get_data(base_url, api_key, "LICIT-ADJUD-POR-LOS-MINIS")
-currency_data$`Monto Adjudicado` <- clean_currency(datos_con_divisas$`Monto Adjudicado`)  
+currency_data$`Monto Adjudicado` <- clean_currency(currency_data$`Monto Adjudicado`)  
 ```
 
 ## Accede Datos a través del API de Junar en R
