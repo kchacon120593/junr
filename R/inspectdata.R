@@ -22,7 +22,8 @@ get_dimensions <- function(base_url, api_key) {
 
     for (guid in guid_list) {
      current_set <- get_data(base_url, api_key, guid)
-     result_row <- c("GUID" = guid, "NROW" = nrow(current_set), "NCOL" = ncol(current_set),
+     result_row <- c("GUID" = guid, "NROW" = nrow(current_set), 
+                     "NCOL" = ncol(current_set),
                      "DIM" = nrow(current_set)*ncol(current_set))
      if (!exists("result_df")) {
        # TODO: There must be a better way to do this

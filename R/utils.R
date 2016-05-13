@@ -1,9 +1,10 @@
 #' Clean Currency Values
 #'
-#' Often Junar data involving currency data is not clean because for some reason
-#' content and presentation of currency values is not separated). To clean up
-#' this data quickly the following helper function accepts the position of the
-#' character value for the currency and the thousands and decimal delimiters.
+#' Often Junar data involving currency data is not clean because for some
+#' reason content and presentation of currency values is not separated). To
+#' clean up this data quickly the following helper function accepts the
+#' position of the character value for the currency and the thousands and
+#' decimal delimiters.
 #'
 #' The currency character position defaults to the first character from the
 #' left. And it refers directly to the symbol as present in the data frame
@@ -20,7 +21,10 @@
 #'    (defaults to ".")
 #' @keywords Currency, Data Cleaning, Scrubbing
 #' @export
-clean_currency <- function(currency_column, currency_symbol_pos=1, thousand_separator=",", decimal_separator=".") {
+clean_currency <- function(currency_column, 
+                           currency_symbol_pos=1, 
+                           thousand_separator=",", 
+                           decimal_separator=".") {
   clean_currency <- gsub(get_currency_character(currency_column[1],
                                                 currency_symbol_pos), "",
                                                 currency_column)

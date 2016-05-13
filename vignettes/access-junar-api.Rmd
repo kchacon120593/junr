@@ -48,31 +48,30 @@ meta-data included as a data frame.
 To get only a list of the global unique identifiers (GUID) of the data sets,
 you can use `list_guid`. 
 
-
 ```{r}
 list_guid(base_url, api_key)
 ```
 
-This has the benefit that a reference can be made to the GUID based on position
-number. For example:
-
-```{r}
-pres_list <-list_guid(base_url, api_key)
-pres_list[3]
-```
-
-And the same numbers can be used based on the full title with `list_titles`. 
+You can also make a list of the titles of the data sets:
 
 ```{r}
 list_titles(base_url, api_key)
 ```
 
 Both `list_guid` and `list_titles` where set up for convenience only because
-the results tend to fit in the console window making it easier to read.
+the results tend to fit in the console window making it easier to read. They
+are meant to help to get a quick overview of the available data.
 
-Obviously, if you have the GUID of the data that interest you, you can use this
-directly to make a call to read all the data. For example, to view all public
-purchasing of the presidential office in Costa Rica:
+## Downloading data to R
+You need to know the Global Unique Identifier (GUID) of the data set that you
+are interested in to be able to download them to your R session. You can look
+for the GUID on the web page that shows the data of interest. For example on the
+page for [public expenditure of the Costa Rican
+government](http://datosabiertos.presidencia.go.cr/dashboards/9566/compras-publicas/)
+there is a table called "Public Purchasing of the Ministry of the Presidency".
+In the menu underneath the table you have an option to "Obtain GUID". This last
+option opens a pop-up showing the GUID "COMPR-PUBLI-DEL-MINIS" that we are
+going to use in the example below.
 
 ```{r}
 data_guid <- "COMPR-PUBLI-DEL-MINIS"
@@ -83,7 +82,20 @@ With `View(purchasing_data)` you can check whether the data have been
 downloaded correctly, and have a quick visual check on the mode of the data
 (see below to convert currency data from text to numeric).
 
-### Determine data dimensions
+You may note that if you do not need to go to the web interface to get the GUID
+for any data sets of interest. With the function `list_guid()` as we used it
+above, we obtained the same information. 
+
+```{r}
+pres_list <-list_guid(base_url, api_key)
+pres_list[3]
+```
+
+We can get the GUID we are interested in by fetching the third entry in the
+list of GUID's (see the full list in the example above). And the same index
+numbers can be used with a list of full titles created  with `list_titles()`. 
+
+## Determine data dimensions
 On data platforms that run Junar, many data sets are just tables of data that
 has already been analyzed and summarized. It is not immediately obvious which
 sets contain many data points, and which sets contain only a few rows.
@@ -99,7 +111,7 @@ are many GUID's.
 get_dimensions(base_url, api_key)
 ```
 
-### Clean up currency data
+## Clean up currency data
 In the example data above, and possibly in more Junar implementations, we need
 to clean up any data related to currency values. In our case we need to found
 all currency symbols (Costa Rica Colon) and all the comma's separating
