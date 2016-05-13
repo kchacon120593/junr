@@ -8,7 +8,7 @@ Description:
     government Open Data initiatives in Latin America and the USA. This package
     is a wrapper to make it easier to access data made public through the Junar
     API.
-Version: 0.1.1.9000
+Version: 0.1.1.9001
 Date: 2016-05-24
 Authors@R: c(person("Frans", "van Dunné", ,
                     "frans@ixpantia.com",
