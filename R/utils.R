@@ -23,7 +23,7 @@
 #' @export
 clean_currency <- function(currency_column, 
                            currency_symbol_pos=1, 
-                           thousand_separator=",", 
+                           thousand_separator=",",
                            decimal_separator=".") {
   clean_currency <- gsub(get_currency_character(currency_column[1],
                                                 currency_symbol_pos), "",
