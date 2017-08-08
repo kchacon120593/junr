@@ -7,7 +7,7 @@ junr
 Access Open Data in R through the Junar API
 -------------------------------------------
 
-The Junar API is the basis for a number of Open Data initiatives in Latin America and the USA. The `junr` package is a wrapper to make it easier to access data made public through the Junar API. Some examples of implementations are: [the City of Pasadena](http://data.cityofpasadena.net/home/), and [the City of San Jose](http://data.sanjoseca.gov/home/). Others are listed on the [Junar website](http://junar.com/).
+The Junar API is the basis for a number of Open Data initiatives in Latin America and the USA. The `junr` package is a wrapper to make it easier to access data made public through the Junar API. Some examples of implementations are listed on the [Junar website](http://www.junar.com/).
 
 ### Installation
 
@@ -61,7 +61,7 @@ currency_data$`Monto Adjudicado` <- clean_currency(currency_data$`Monto Adjudica
 Accede Datos a través del API de Junar en R
 -------------------------------------------
 
-El API de Junar es la base para varias iniciativas de Datos Abiertos en Latino América y los EEUU. El paquete `junr` facilita el acceso a estos datos des R. El objetivo es fomentar el uso de los datos disponibles haciendo el acceso lo mas fácil. Algunos ejemplos de implementaciones son: [el Portal de Datos Abiertos del Gobierno de Costa Rica](http://datosabiertos.presidencia.go.cr/home) y la [Ciudad de Córdoba (Argentina)](http://cdcordoba.opendata.junar.com/home/?lang=en) entre otros. Otros se pueden encontrar en el [sitio web de Junar](http://junar.com/).
+El API de Junar es la base para varias iniciativas de Datos Abiertos en Latino América y los EEUU. El paquete `junr` facilita el acceso a estos datos des R. El objetivo es fomentar el uso de los datos disponibles haciendo el acceso lo mas fácil. Algunos ejemplos de implementaciones se pueden encontrar en el [sitio web de Junar](http://www.junar.com/).
 
 ### Instalación
 

@@ -13,9 +13,7 @@ vignette: >
 The Junar API is the basis for a number of Open Data initiatives in Latin
 America and the USA. The `junr` package is a wrapper to make it easier to
 access data made public through the Junar API. Some examples of implementations
-are: [the City of Pasadena](http://data.cityofpasadena.net/home/), and [the
-City of San Jose](http://data.sanjoseca.gov/home/). Others are listed on the
-[Junar website](http://junar.com/).
+are listed on the [Junar website](http://www.junar.com/).
 
 ## Usage
 As an example we will use the data from the [Costa Rican President's
