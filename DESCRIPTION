@@ -28,4 +28,5 @@ Suggests:
 VignetteBuilder: knitr
 License: MIT + file LICENCE
 URL: https://github.com/fvd/junr
-RoxygenNote: 6.0.1 
+RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE, roclets = c("rd", "namespace", "collate")) 
