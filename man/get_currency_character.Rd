@@ -23,4 +23,3 @@ To have a check in place you can request the first character of the currency
 strings with this function, and use it either to assign the currency value,
 or to do a sanity check.
 }
-

@@ -16,4 +16,3 @@ Get a list of all the available GUID's with datasets or views from the
 base URL
 }
 \keyword{GUID}
-

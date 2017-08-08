@@ -16,4 +16,3 @@ Show a list of all available GUID's identifying the available data sets. It
 only shows GUID's so that the list will fit in the console window.
 }
 \keyword{GUID}
-

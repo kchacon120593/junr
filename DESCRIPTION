@@ -8,8 +8,8 @@ Description:
     government Open Data initiatives in Latin America and the USA. This package
     is a wrapper to make it easier to access data made public through the Junar
     API.
-Version: 0.1.1.9002
-Date: 2016-05-13
+Version: 0.1.2
+Date: 2017-08-07
 Authors@R: c(person("Frans", "van Dunné", ,
                     "frans@ixpantia.com",
                     c("aut", "cre"))
@@ -28,4 +28,4 @@ Suggests:
 VignetteBuilder: knitr
 License: MIT + file LICENCE
 URL: https://github.com/fvd/junr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

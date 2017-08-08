@@ -1,8 +1,7 @@
 ## Test environments
-* ubuntu 14.04 (on Travis-CI), R 3.3.0
+* ubuntu 14.04 (on Travis-CI), R 3.3.4
 * win-builder (devel and release)
-* local Ubuntu 14.04 , R 3.3.0
-* local Windows 10, R 3.3.0
+* local Windows 10, R 3.3.4
 
 ## R CMD check results
 There were no ERRORS and no WARNINGS

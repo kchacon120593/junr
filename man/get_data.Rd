@@ -15,15 +15,14 @@ get_data(base_url, api_key, guid)
 }
 \description{
 Get the data for any given GUID and return it as a data frame. Note that we
-use the "ajson" json format from the API. The "json" format has a more
+use the "ajson" JSON format from the API. The "JSON" format has a more
 complex structure.
 }
 \details{
-We do use the json response to get the \code{fLength} value, which indicates the
+We do use the JSON response to get the \code{fLength} value, which indicates the
 length of the dataset. This way we can include a fixed way to get around the
 default limit of 1000 rows of the Junar API.
 
-Note that this removes all meta-data from the json response given by the API.
+Note that this removes all meta-data from the JSON response given by the API.
 }
 \keyword{GUID}
-

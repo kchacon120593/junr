@@ -18,4 +18,3 @@ the results as a data frame with the GUID, the number of rows, number of
 columns and dimension (as total number of cells) for each data set.
 }
 \keyword{GUID}
-

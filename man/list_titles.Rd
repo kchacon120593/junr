@@ -16,4 +16,3 @@ Show a list of all available GUID titles. It only shows the titles so that
 the list will fit in the console window.
 }
 \keyword{GUID}
-
