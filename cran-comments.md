@@ -7,9 +7,8 @@
 There were no ERRORS and no WARNINGS
 
 ## Downstream dependencies
-I have also run R CMD check on downstream dependencies of junr 
+I have run R CMD check on downstream dependencies of junr 
 (https://github.com/FvD/junr/blob/master/revdep/summary.md). 
 
-But this is just to be ready for the future, as there are no downstream
-dependencies yet (first submission of the package).
+* No issues with downstream dependencies
 
