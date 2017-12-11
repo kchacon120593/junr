@@ -1,13 +1,8 @@
-library(junr)
-library(httr)
-
 context("Get data")
-
-base_url <- "http://api.datosabiertos.presidencia.go.cr/api/v2/datastreams/"
-api_key <- "0bd55e858409eefabc629b28b2e7916361ef20ff"
 
 # get_index
 test_that("The connection to the test url gets a response", {
+  skip_on_cran()
   r <- GET(paste(base_url, "?auth_key=", api_key, sep = ""), accept_json(),
            config = httr::config(ssl_verifypeer = FALSE))
   expect_true(r$status_code %in% c(200, 403, 500))
@@ -49,6 +44,7 @@ test_that("We geta warning when there is no api_key", {
 
 # get_data
 guid <- list_guid(base_url, api_key)[1]
+
 test_that("We geta warning when there is no url", {
   expect_warning(get_data(api_key = api_key, guid = guid), "Please add a valid base URL")
 })

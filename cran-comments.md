@@ -7,6 +7,8 @@
 ## R CMD check results
 There were no ERRORS and no WARNINGS
 
+Changed tests at the request of Uwe Ligges to reduce test time on CRAN machines
+
 ## Downstream dependencies
 I have run R CMD check on downstream dependencies of junr 
 (https://github.com/FvD/junr/blob/master/revdep/summary.md). 
