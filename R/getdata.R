@@ -14,9 +14,13 @@ NULL
 #' @export
 get_index <- function(base_url, api_key){
   if (missing(base_url)) {
-    warning("Please add a valid base URL")
+    warning(
+      "Please add a valid base URL"
+    )
   } else if (missing(api_key)) {
-    warning("Please add a valid API key for the base URL you are trying to access")
+    warning(
+      "Please add a valid API key for the base URL you are trying to access"
+    )
   } else
   try({
     r <- GET(paste(base_url, "?auth_key=", api_key, sep=""), accept_json())
@@ -38,7 +42,9 @@ list_guid <- function(base_url, api_key){
   if (missing(base_url)) {
     warning("Please add a valid base URL")
   } else if (missing(api_key)) {
-    warning("Please add a valid API key for the base URL you are trying to access")
+    warning(
+      "Please add a valid API key for the base URL you are trying to access"
+    )
   } else
   try({
     content_index <- get_index(base_url, api_key)
@@ -57,9 +63,13 @@ list_guid <- function(base_url, api_key){
 #' @export
 list_titles <- function(base_url, api_key){
   if (missing(base_url)) {
-    warning("Please add a valid base URL")
+    warning(
+      "Please add a valid base URL"
+    )
   } else if (missing(api_key)) {
-    warning("Please add a valid API key for the base URL you are trying to access")
+    warning(
+      "Please add a valid API key for the base URL you are trying to access"
+    )
   } else
   try({
     content_index <- get_index(base_url, api_key)
@@ -82,28 +92,62 @@ list_titles <- function(base_url, api_key){
 #' @param base_url The base URL of the Junar service
 #' @param api_key The user's API key for the Junar service
 #' @param guid The GUID of the data set of interest
+#' @param stream The type of data stream of the request. By default we use the
+#'   paginated stream (stream = "paged"). To get the full unpaginated stream 
+#'   set stream = "unlimited". Please use the latter option with care
 #' @keywords GUID
 #' @export
 
-get_data <- function(base_url, api_key, guid) {
+get_data <- function(base_url, api_key, guid, stream = "paged") {
   if (missing(base_url)) {
     warning("Please add a valid base URL")
   } else if (missing(api_key)) {
-    warning("Please add a valid API key for the base URL you are trying to access")
+    warning(
+      "Please add a valid API key for the base URL you are trying to access"
+    )
   } else if (missing(guid)) {
-    warning("Please add a valid GUID for the dataset you are trying to access")
-  } else
-  try({
-    r_json <- GET(paste(base_url, guid, "/data.json/","?auth_key=", api_key, sep=""), accept_json())
-    jsondata <- fromJSON(content(r_json, "text"))
-    data_length <- jsondata$result$fLength
+    warning(
+      "Please add a valid GUID for the dataset you are trying to access"
+    )
+  } else if (stream == "paged" {
+    try({
+      r_json <- GET(paste(base_url, guid,
+          "/data.json/", "?auth_key=",
+          api_key, sep = ""), accept_json())
+      jsondata <- fromJSON(content(r_json, "text"))
+      data_length <- jsondata$result$fLength
 
-    r_ajson <- GET(paste(base_url, guid, "/data.ajson/","?auth_key=", api_key, "&limit=", data_length, sep=""), accept_json())
-    dataset <- fromJSON(content(r_ajson, "text"))
-    dataset <- dataset$result
-    df <- as.data.frame(dataset)
-    colnames(df) <- dataset[1,]
-    df <- df [-1,]
-    return(df)
-  })
+      r_ajson <- GET(paste(base_url, guid, 
+          "/data.ajson/","?auth_key=", 
+          api_key, "&limit=", data_length, sep = ""), accept_json())
+
+
+      dataset <- fromJSON(content(r_ajson, "text"))
+      dataset <- dataset$result
+
+      df <- as.data.frame(dataset)
+      colnames(df) <- dataset[1,]
+      df <- df [-1,]
+
+      return(df)
+    })
+  } else if (stream == "paged" {
+    try({
+    warning(
+"Please take into account that using stream = 'unlimited' puts stress 
+on the API infrastructure. Please use this option with care.
+
+Toma en cuenta que este tipo de llamados impactan la infraestructura 
+del API. Usalo por favor con prudencia y consideración"
+    )
+      r_pjson <- fromJSON(paste(base_url, guid, 
+          "/data.pjson/","?auth_key=", api_key, sep = ""))
+
+    df <- r_pjson$result
+
+      return(df)
+    })
+
+  }
 }
+
