@@ -41,13 +41,13 @@ los meta-datos incluidos como una hoja de datos (*data frame*) en R.
 
 Para tener solo una lista de los GUID la instrucción es:
 
-```{r}
+```{r, eval=FALSE}
 list_guid(url_base, api_key)
 ```
 
 Y solo un listado de los títulos.
 
-```{r}
+```{r, eval=FALSE}
 list_titles(url_base, api_key)
 ```
 
@@ -95,7 +95,7 @@ una vez cuantos filas hay detrás de cada GUID en el URL disponible.
 En `junr` lo puedes hacer rápidamente usando la función `get_dimensions` para
 obtener una tabla con todos los GUID y las dimensiones de los datos:
 
-```{r}
+```{r, eval=FALSE}
 get_dimensions(url_base, api_key)
 ```
 

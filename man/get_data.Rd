@@ -4,7 +4,7 @@
 \alias{get_data}
 \title{Get data for a given GUID}
 \usage{
-get_data(base_url, api_key, guid)
+get_data(base_url, api_key, guid, stream = "paged")
 }
 \arguments{
 \item{base_url}{The base URL of the Junar service}
@@ -12,6 +12,10 @@ get_data(base_url, api_key, guid)
 \item{api_key}{The user's API key for the Junar service}
 
 \item{guid}{The GUID of the data set of interest}
+
+\item{stream}{The type of data stream of the request. By default we use the
+paginated stream (stream = "paged"). To get the full unpaginated stream
+set stream = "unlimited". Please use the latter option with care}
 }
 \description{
 Get the data for any given GUID and return it as a data frame. Note that we

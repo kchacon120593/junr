@@ -46,13 +46,13 @@ meta-data included as a data frame.
 To get only a list of the global unique identifiers (GUID) of the data sets,
 you can use `list_guid`. 
 
-```{r}
+```{r, eval=FALSE}
 list_guid(base_url, api_key)
 ```
 
 You can also make a list of the titles of the data sets:
 
-```{r}
+```{r, eval=FALSE}
 list_titles(base_url, api_key)
 ```
 
