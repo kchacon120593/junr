@@ -109,7 +109,7 @@ get_data <- function(base_url, api_key, guid, stream = "paged") {
     warning(
       "Please add a valid GUID for the dataset you are trying to access"
     )
-  } else if (stream == "paged" {
+  } else if (stream == "paged") {
     try({
       r_json <- GET(paste(base_url, guid,
           "/data.json/", "?auth_key=",
@@ -131,7 +131,7 @@ get_data <- function(base_url, api_key, guid, stream = "paged") {
 
       return(df)
     })
-  } else if (stream == "paged" {
+  } else if (stream == "unlimited") {
     try({
     warning(
 "Please take into account that using stream = 'unlimited' puts stress 
