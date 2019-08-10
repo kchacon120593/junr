@@ -1,9 +1,8 @@
 #' @import httr
 #' @import jsonlite
-#' @import dplyr
 #'
 NULL
-    
+
 
 #' Get hits to datastream
 #'
@@ -26,11 +25,11 @@ NULL
        dataset <- dataset$datastream$stats$resources
        df <- as.data.frame(dataset)
        colnames(df) <- dataset[1,]
-       df <- df [-1,]   
+       df <- df [-1,]
        return(dataset)
      })
  }
-  
+
 
 #' Get hits to visualizations
 #'
@@ -53,11 +52,11 @@ NULL
        dataset <- dataset$visualizations$stats$resources
        df <- as.data.frame(dataset)
        colnames(df) <- dataset[1,]
-       df <- df [-1,]   
+       df <- df [-1,]
        return(dataset)
      })
 }
-  
+
 #' Get hits to dashboards
 #'
 #' Get a list of hits to dashboards
@@ -80,7 +79,7 @@ get_statsDB <- function(base_url, api_key){
 
        df <- as.data.frame(dataset)
        colnames(df) <- dataset[1,]
-       df <- df [-1,]   
+       df <- df [-1,]
 
        return(dataset)
      })
@@ -113,13 +112,13 @@ get_statsDS_Date <- function(base_url, api_key, from, to){
 
        df <- as.data.frame(dataset)
        colnames(df) <- dataset[1,]
-       df <- df [-1,]   
+       df <- df [-1,]
 
        return(dataset)
      })
    }
-  
-  
+
+
 #' Get hits by groupMonth
 #'
 #' Get a list of hits by groupMonth
@@ -134,16 +133,16 @@ get_statsDS_Month <- function(base_url, api_key, month){
     warning(
       "Please add a valid API key for the base URL you are trying to access"
     )
-  } 
+  }
   try({
-    r <- GET(paste(base_url, "?auth_key=", 
+    r <- GET(paste(base_url, "?auth_key=",
         api_key, "&group_by=", month, sep=""), accept_json())
     dataset <- fromJSON(content(r, "text"))
     dataset <- dataset$datastreams$stats$articles_over_time
 
     df <- as.data.frame(dataset)
     colnames(df) <- dataset[1,]
-    df <- df [-1,]   
+    df <- df [-1,]
 
     return(dataset)
   })
