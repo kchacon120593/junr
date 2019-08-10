@@ -91,6 +91,7 @@ get_statsDB <- function(base_url, api_key){
 #'
 #' @param base_url The base URL of the Junar service
 #' @param api_key The user's API key for the Junar service
+#' @param from,to A date with the format dd/mm/yyyy.
 #' @export
 get_statsDS_Date <- function(base_url, api_key, from, to){
      if (missing(base_url)) {
