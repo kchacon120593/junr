@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Show GUID titles — list_titles • junr</title>
+<title>Changelog • junr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,13 +30,9 @@
 
 
 
-<meta property="og:title" content="Show GUID titles — list_titles" />
+<meta property="og:title" content="Changelog" />
 
-<meta property="og:description" content="Show a list of all available GUID titles. It only shows the titles so that
-the list will fit in the console window." />
-<meta name="twitter:card" content="summary" />
 
-<meta name="robots" content="noindex">
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -51,7 +47,7 @@ the list will fit in the console window." />
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -64,7 +60,7 @@ the list will fit in the console window." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">junr</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
       </span>
     </div>
 
@@ -94,6 +90,9 @@ the list will fit in the console window." />
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -115,42 +114,31 @@ the list will fit in the console window." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Show GUID titles</h1>
-    <small class="dont-index">Source: <a href='https://github.com/fvd/junr/blob/master/R/getdata.R'><code>R/getdata.R</code></a></small>
-    <div class="hidden name"><code>list_titles.Rd</code></div>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/fvd/junr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    
-    <p>Show a list of all available GUID titles. It only shows the titles so that
-the list will fit in the console window.</p>
-    
-    </div>
-
-    <pre class="usage"><span class='fu'>list_titles</span>(<span class='no'>base_url</span>, <span class='no'>api_key</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>base_url</th>
-      <td><p>The base URL of the Junar service</p></td>
-    </tr>
-    <tr>
-      <th>api_key</th>
-      <td><p>The user's API key for the Junar service</p></td>
-    </tr>
-    </table>
-    
-
+    <div id="junr-0209000" class="section level1">
+<h1 class="page-header">
+<a href="#junr-0209000" class="anchor"></a>junr 0.2.0.9000<small> Unreleased </small>
+</h1>
+<p>This is a maintenance release, with only a few user-facing changes:</p>
+<ul>
+<li>junr now depends on R &gt;= 3.2 (as far back as we successfully checked).</li>
+<li>junr now has a website.</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-                </ul>
-
+    <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#junr-0209000">0.2.0.9000</a></li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
       <footer>
