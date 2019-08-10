@@ -2,7 +2,7 @@ Type: Package
 Package: junr
 Title: Access Open Data Through the 'Junar' API
 Version: 0.2.0.9000
-Date: 2019-03-31
+Date: 2019-08-10
 Authors@R: 
     person(given = "Frans",
            family = "van Dunné",
