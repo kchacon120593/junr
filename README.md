@@ -82,10 +82,9 @@ Latino América y los EEUU. El paquete `junr` facilita el acceso a estos
 datos des R. El objetivo es fomentar el uso de los datos disponibles
 haciendo el acceso lo mas fácil. Algunos ejemplos de implementaciones
 son: [el Portal de Datos Abiertos del Gobierno de Costa
-Rica](http://datosabiertos.presidencia.go.cr/home) y la [Ciudad de
-Córdoba (Argentina)](http://cdcordoba.opendata.junar.com/home/?lang=en)
-entre otros. Otros se pueden encontrar en el [sitio web de
-Junar](http://junar.com/).
+Rica](http://datosabiertos.presidencia.go.cr/home) y la Ciudad de
+Córdoba (Argentina) entre otros. Otros se pueden encontrar en el [sitio
+web de Junar](http://junar.com/).
 
 ### Instalación
 
