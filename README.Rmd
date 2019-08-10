@@ -1,23 +1,25 @@
 ---
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
+
 # junr
 
+<!-- badges: start -->
 [![Travis-CI Build Status](https://travis-ci.org/FvD/junr.svg?branch=master)](https://travis-ci.org/FvD/junr) 
 [![Coverage Status](https://img.shields.io/codecov/c/github/FvD/junr/master.svg)](https://codecov.io/github/FvD/junr?branch=master)
 [![CRAN Status Badge](http://www.r-pkg.org/badges/version/junr)](https://cran.r-project.org/package=junr)
+<!-- badges: end -->
 
 ## Access Open Data in R through the Junar API
 The Junar API is the basis for a number of Open Data initiatives in Latin
