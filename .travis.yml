@@ -16,4 +16,8 @@ matrix:
   - r: 3.2
   - r: 3.1
   - r: 3.0
+    # https://travis-ci.org/maurolepore/junr/builds/570229517
+    allow_failure:
+  - r: 3.1
+  - r: 3.0
 

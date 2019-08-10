@@ -17,7 +17,7 @@ License: MIT + file LICENCE
 URL: https://github.com/fvd/junr
 BugReports: https://github.com/fvd/junr/issues
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.2)
 Imports:
     httr,
     jsonlite
