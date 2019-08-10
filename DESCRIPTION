@@ -1,21 +1,21 @@
-Encoding: UTF-8
-Package: junr
 Type: Package
+Package: junr
 Title: Access Open Data Through the 'Junar' API
-Description:
-    The 'Junar' API is a commercial platform to organize and publish data
-    <http://www.junar.com>. It has been used in a number of national and local
-    government Open Data initiatives in Latin America and the USA. This package
-    is a wrapper to make it easier to access data made public through the 'Junar'
-    API.
 Version: 0.2.0
 Date: 2019-03-31
-Authors@R: c(person("Frans", "van Dunné", ,
-                    "frans@ixpantia.com",
-                    c("aut", "cre"))
-              )
+Authors@R: 
+    person(given = "Frans",
+           family = "van Dunné",
+           role = c("aut", "cre"),
+           email = "frans@ixpantia.com")
+Description: The 'Junar' API is a commercial platform to
+    organize and publish data <http://www.junar.com>. It has been used in
+    a number of national and local government Open Data initiatives in
+    Latin America and the USA. This package is a wrapper to make it easier
+    to access data made public through the 'Junar' API.
+License: MIT + file LICENCE
+URL: https://github.com/fvd/junr
 BugReports: https://github.com/fvd/junr/issues
-LazyData: TRUE
 Depends:
     R (>= 3.0.0)
 Imports:
@@ -25,8 +25,10 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 0.8.0)
-VignetteBuilder: knitr
-License: MIT + file LICENCE
-URL: https://github.com/fvd/junr
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: TRUE
+Roxygen: list(markdown = TRUE, roclets = c("rd", "namespace",
+    "collate"))
 RoxygenNote: 6.1.1
-Roxygen: list(markdown = TRUE, roclets = c("rd", "namespace", "collate")) 
