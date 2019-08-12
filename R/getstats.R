@@ -57,6 +57,7 @@ NULL
      })
 }
 
+
 #' Get hits to dashboards
 #'
 #' Get a list of hits to dashboards
@@ -90,7 +91,6 @@ get_statsDB <- function(base_url, api_key){
 #' Get a list of hits by date (hits to the datastream_date).
 #'
 #' @param base_url The base URL of the Junar service
-#' @param api_key The user's API key for the Junar service
 #' @param from,to A date with the format dd/mm/yyyy.
 #' @export
 get_statsDS_Date <- function(base_url, api_key, from, to){
