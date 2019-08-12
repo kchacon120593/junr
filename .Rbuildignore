@@ -5,3 +5,8 @@
 ^README-.*\.png$
 ^cran-comments\.md$
 ^revdep$
+^justfile$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+

@@ -10,6 +10,8 @@ get_statsDS_Month(base_url, api_key, month)
 \item{base_url}{The base URL of the Junar service}
 
 \item{api_key}{The user's API key for the Junar service}
+
+\item{month}{FIXME}
 }
 \description{
 Get a list of hits by groupMonth

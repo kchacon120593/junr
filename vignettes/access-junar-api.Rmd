@@ -105,7 +105,7 @@ note that it may take a while before the function finishes, especially if there
 are many GUID's.
 
 
-```{r}
+```{r, eval=FALSE}
 get_dimensions(base_url, api_key)
 ```
 

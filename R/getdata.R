@@ -93,7 +93,7 @@ list_titles <- function(base_url, api_key){
 #' @param api_key The user's API key for the Junar service
 #' @param guid The GUID of the data set of interest
 #' @param stream The type of data stream of the request. By default we use the
-#'   paginated stream (stream = "paged"). To get the full unpaginated stream 
+#'   paginated stream (stream = "paged"). To get the full unpaginated stream
 #'   set stream = "unlimited". Please use the latter option with care
 #' @keywords GUID
 #' @export
@@ -117,8 +117,8 @@ get_data <- function(base_url, api_key, guid, stream = "paged") {
       jsondata <- fromJSON(content(r_json, "text"))
       data_length <- jsondata$result$fLength
 
-      r_ajson <- GET(paste(base_url, guid, 
-          "/data.ajson/","?auth_key=", 
+      r_ajson <- GET(paste(base_url, guid,
+          "/data.ajson/","?auth_key=",
           api_key, "&limit=", data_length, sep = ""), accept_json())
 
 
@@ -134,13 +134,13 @@ get_data <- function(base_url, api_key, guid, stream = "paged") {
   } else if (stream == "unlimited") {
     try({
     warning(
-"Please take into account that using stream = 'unlimited' puts stress 
+"Please take into account that using stream = 'unlimited' puts stress
 on the API infrastructure. Please use this option with care.
 
-Toma en cuenta que este tipo de llamados impactan la infraestructura 
-del API. Usalo por favor con prudencia y consideración"
+Toma en cuenta que este tipo de llamados impactan la infraestructura
+del API. Usalo por favor con prudencia y consideraciu00F3n"
     )
-      r_pjson <- fromJSON(paste(base_url, guid, 
+      r_pjson <- fromJSON(paste(base_url, guid,
           "/data.pjson/","?auth_key=", api_key, sep = ""))
 
     df <- r_pjson$result
