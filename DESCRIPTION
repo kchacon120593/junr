@@ -1,13 +1,17 @@
 Type: Package
 Package: junr
 Title: Access Open Data Through the 'Junar' API
-Version: 0.2.0.9000
-Date: 2019-08-10
-Authors@R: 
+Version: 0.2.1
+Date: 2020-02-02
+Authors@R: c(
     person(given = "Frans",
            family = "van Dunné",
            role = c("aut", "cre"),
-           email = "frans@ixpantia.com")
+           email = "frans@ixpantia.com"),
+    person("Mauro", "Lepore", 
+            role="ctb", 
+            email="maurolepore@gmail.com")
+            )
 Description: The 'Junar' API is a commercial platform to
     organize and publish data <http://www.junar.com>. It has been used in
     a number of national and local government Open Data initiatives in
