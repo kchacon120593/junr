@@ -34,6 +34,7 @@ City of San Jose](http://data.sanjoseca.gov/home/). Others are listed on the
 ```{r, eval=FALSE}
 install.packages("devtools")
 install.packages("fs")
+install.packages("dplyr")
 devtools::install_github("FvD/junr")
 ```
 
